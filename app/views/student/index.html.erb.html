@@ -1,0 +1,6 @@
+<h1>Ongoing Tasks</h1>
+<% @ongoing_tasks.each do |task_details| %>
+		<a href=<%= "/showgame?game_id=" + task_details.game_id %>><%= task_details.game_name %></a><br />
+<% end %>
+
+<br />

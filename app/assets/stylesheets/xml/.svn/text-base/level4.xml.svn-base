@@ -1,0 +1,233 @@
+<quiz TYPE="Addition 1 to 20">
+  <level NAME="level4"/>
+  <Items>
+    <Item>
+      <question>1 + 1</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>1 + 6</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>1 + 9</question>
+      <correct>10</correct>
+    </Item>
+    <Item>
+      <question>1 + 10</question>
+      <correct>11</correct>
+    </Item>
+    <Item>
+      <question>1 + 14</question>
+      <correct>15</correct>
+    </Item>
+    <Item>
+      <question>1 + 18</question>
+      <correct>19</correct>
+    </Item>
+    <Item>
+      <question>2 + 2</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>2 + 4</question>
+      <correct>6</correct>
+    </Item>
+    <Item>
+      <question>2 + 9</question>
+      <correct>11</correct>
+    </Item>
+    <Item>
+      <question>2 + 10</question>
+      <correct>12</correct>
+    </Item>
+    <Item>
+      <question>2 + 14</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>2 + 17</question>
+      <correct>19</correct>
+    </Item>
+    <Item>
+      <question>3 + 2</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>3 + 5</question>
+      <correct>8</correct>
+    </Item>
+    <Item>
+      <question>3 + 7</question>
+      <correct>10</correct>
+    </Item>
+    <Item>
+      <question>3 + 10</question>
+      <correct>13</correct>
+    </Item>
+    <Item>
+      <question>3 + 13</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>4 + 3</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>4 + 6</question>
+      <correct>10</correct>
+    </Item>
+    <Item>
+      <question>4 + 7</question>
+      <correct>11</correct>
+    </Item>
+    <Item>
+      <question>4 + 12</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>4 + 14</question>
+      <correct>18</correct>
+    </Item>
+    <Item>
+      <question>5 + 2</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>5 + 4</question>
+      <correct>9</correct>
+    </Item>
+    <Item>
+      <question>5 + 9</question>
+      <correct>14</correct>
+    </Item>
+    <Item>
+      <question>5 + 11</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>5 + 14</question>
+      <correct>19</correct>
+    </Item>
+    <Item>
+      <question>6 + 3</question>
+      <correct>9</correct>
+    </Item>
+    <Item>
+      <question>6 + 5</question>
+      <correct>11</correct>
+    </Item>
+    <Item>
+      <question>6 + 8</question>
+      <correct>14</correct>
+    </Item>
+    <Item>
+      <question>6 + 10</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>7 + 1</question>
+      <correct>8</correct>
+    </Item>
+    <Item>
+      <question>7 + 5</question>
+      <correct>12</correct>
+    </Item>
+    <Item>
+      <question>7 + 7</question>
+      <correct>14</correct>
+    </Item>
+    <Item>
+      <question>7 + 12</question>
+      <correct>19</correct>
+    </Item>
+    <Item>
+      <question>8 + 3</question>
+      <correct>11</correct>
+    </Item>
+    <Item>
+      <question>8 + 5</question>
+      <correct>13</correct>
+    </Item>
+    <Item>
+      <question>8 + 8</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>8 + 12</question>
+      <correct>20</correct>
+    </Item>
+    <Item>
+      <question>9 + 1</question>
+      <correct>10</correct>
+    </Item>
+    <Item>
+      <question>9 + 5</question>
+      <correct>14</correct>
+    </Item>
+    <Item>
+      <question>9 + 9</question>
+      <correct>18</correct>
+    </Item>
+    <Item>
+      <question>10 + 1</question>
+      <correct>11</correct>
+    </Item>
+    <Item>
+      <question>10 + 5</question>
+      <correct>15</correct>
+    </Item>
+    <Item>
+      <question>10 + 8</question>
+      <correct>18</correct>
+    </Item>
+    <Item>
+      <question>11 + 3</question>
+      <correct>14</correct>
+    </Item>
+    <Item>
+      <question>11 + 6</question>
+      <correct>17</correct>
+    </Item>
+    <Item>
+      <question>11 + 8</question>
+      <correct>19</correct>
+    </Item>
+    <Item>
+      <question>12 + 1</question>
+      <correct>13</correct>
+    </Item>
+    <Item>
+      <question>12 + 6</question>
+      <correct>18</correct>
+    </Item>
+    <Item>
+      <question>13 + 1</question>
+      <correct>14</correct>
+    </Item>
+    <Item>
+      <question>13 + 4</question>
+      <correct>17</correct>
+    </Item>
+    <Item>
+      <question>14 + 2</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>14 + 5</question>
+      <correct>19</correct>
+    </Item>
+    <Item>
+      <question>15 + 2</question>
+      <correct>17</correct>
+    </Item>
+    <Item>
+      <question>16 + 3</question>
+      <correct>19</correct>
+    </Item>
+    <Item>
+      <question>17 + 1</question>
+      <correct>18</correct>
+    </Item>
+  </Items>
+</quiz>

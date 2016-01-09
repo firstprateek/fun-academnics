@@ -1,0 +1,8 @@
+http://localhost:3000/logger/logthis?student_id=nirmal33334&teacher_id=mary&game_id=game&level_name=Area&score=400&accuracy=90
+
+GJ0620110007651
+GS498463
+
+GS498458
+
+160889file:///C:/Users/N0P/Downloads/test.html

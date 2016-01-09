@@ -1,0 +1,3 @@
+SEN checklist
+
+leaderboard score algo (is add subtract working fine?)

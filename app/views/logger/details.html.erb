@@ -1,0 +1,79 @@
+<div id="page-inner" >
+<div class="pg-content-main" style ="width:800px">
+
+
+<% @student = User.where(:name => @stud_id.to_s ).first 
+@lvlString = @student.level_String
+@timeString = @student.time_String
+#binding.pry
+@starlist = @lvlString.split(',')
+@timelist = @timeString.split(',')
+%>
+
+<%
+
+@lvlList = ["Add upto 10","Sub upto 10","Add/Sub upto 10", "Add upto 20","Sub upto 20","Add/Sub upto 20", "Add upto 100","Sub upto 100","Add/Sub upto 100", "Mixed Bag", "Table x2", "Table x3", "Table x4", "Table x5", "Table x6", "Table x7", "Table x8", "Table x9", "Table x10", "Table x11", "Table x12", "Table x13", "Table x14", "Table x15", "Division upto 50", "Division upto 100" ]
+
+
+%>
+
+
+
+<h3>Name : <%= @student.real_name %></h3>
+
+
+<div class ="block-left">
+<table class="dataTable" style="width: 400px">
+
+<thead>
+	<tr>
+	<td><center>Level Name</center></td>
+	<td colspan="3"><center>Star</center></td>
+	<td><center>HH:MM</center></td>
+	</tr>
+</thead>
+<tbody>
+<%$i = 1%>
+<% @starlist.each do |level|  %>
+
+<%if($i == 14) %>
+</tbody>		
+</table>
+</div>
+	
+<div class ="block-right">
+<table class="dataTable" style="width: 400px">
+
+<thead>
+	<tr >
+	<td><center>Level Name</center></td>
+	<td colspan="3"><center>Star</center></td>
+	<td><center>HH:MM</center></td>
+	</tr>
+</thead>
+<tbody>
+<%end%>	
+<tr>
+<td><%=@lvlList[$i-1]%></td>
+<%if(level.to_i == 3) %><td><img src="/assets/images/star.gif"></td><td><img src="/assets/images/star.gif"></td><td><img src="/assets/images/star.gif"></td>
+<%elsif(level.to_i == 2) %><td><img src="/assets/images/star.gif"></td><td><img src="/assets/images/star.gif"></td><td></td>
+<%elsif(level.to_i == 1) %><td><img src="/assets/images/star.gif"></td><td></td><td></td>
+<%elsif(level.to_i == 0) %><td></td><td></td><td></td>
+<%end%>
+<td><%=@timelist[$i-1][0..4]%></td>
+	
+</tr>	
+<% $i=$i+1 %>
+<%end%>
+
+</tbody>	
+	
+</table>
+</div> <%# Right Block Close %>
+	<div class="clear"></div>
+	
+<h3>Total Time Played (HH:MM) : <%= @student.total_time_played.to_s[0..4]%></h3>
+
+
+</div><%# Content-Main Block Close %>
+</div><%# PageInner Block Close %>

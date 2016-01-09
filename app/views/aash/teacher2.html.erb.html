@@ -1,0 +1,159 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interactive Education</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="MATHFACT" />
+
+    <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" />
+	<%= stylesheet_link_tag "application" %>
+	<%= javascript_include_tag "application" %>
+   <%#= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+	<script>
+				$(document).ready(function(){
+				
+					
+					//Examples of how to assign the ColorBox event to elements
+					$(".ajax").colorbox();
+					$(".youtube").colorbox({iframe:true, innerWidth:425, innerHeight:344});
+					$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+					$(".inline").colorbox({inline:true, width:"50%"});
+					//Example of preserving a JavaScript event for inline calls.
+				
+					$("#click").click(function(){ 
+										$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+										return false;
+									});
+				});
+	</script>
+	</head>
+    <body>
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+            <div id="page-header">
+            	 <h1 title="Interactive Education">
+		     <%= link_to "Home", root_path %></h1>
+	        <div id="page-header-menu">
+	            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+	            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+	            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+	             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+	            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+	            <a id="page-header-mathfact" href="/product" title="Interactive Education">Interactive Education</a>
+	            <a id="page-header-team" href="/team" title="Team">Team</a>
+            <!--<a id="page-header-logout" href="logout.htm" title="Logout">Logout</a> -->
+	 <%= link_to('Logout', destroy_user_session_path ,:id => 'page-header-logout',:title => 'Logout', :method => 'delete') %>
+         
+  </div>
+    </div>
+    
+	
+<% @data = User.where(:teacher_id => current_user.name).order(:real_name) %>
+<%
+@havename = Array.new
+@noname = Array.new
+
+  @data.each do |student| 
+	if(student.real_name.to_s == "")
+		@noname.push(student)
+	else
+		@havename.push(student)
+	end
+  end
+%>
+
+<%#binding.pry%>
+    <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+		<h3>	<%= @message %> </h3>
+
+		<h2>Teacher Dashboard</h2><br>
+					<h3>Welcome <em><%=current_user.real_name%></em> !</h3><br>
+
+<center>
+		            <table class="dataTable">
+		            	<thead>
+		                	<tr>
+		                    	<td>Name</td>
+		                        <td>Score <span class="hotspot" style="font-size:9px;" onmouseover="tooltip.show('3 stars in a level gives you 50 points<br> 2 stars in a level gives you 30 points<br> 1 star in a level gives you 10 points');" onmouseout="tooltip.hide();">[?]</span></td>
+		                        <td>Time played (hh:mm)</td>
+		                        <td>Accuracy</td>
+
+		                    </tr>
+		                </thead>
+		                <tbody>
+			<% @havename.each do |student|  %>
+			<tr> 
+			<td>
+			<%if(student.real_name.to_s != "")%>
+			
+		
+			<%= raw("<a href=\"") + "/details?" + student.name.to_s + raw("\"") %> title ="Student Details" class = "ajax"><%= student.real_name.to_s%></a>
+			
+			<%else%>
+			( <%= student.name.to_s %> ) 
+			<span class="hotspot" style="font-size:9px;" onmouseover="tooltip.show('Yet to login ');" onmouseout="tooltip.hide();">[?]</span>
+			<%end%>
+			</td>
+			<td><%= student.points.to_s %></td>
+			<td><%= student.total_time_played.to_s[0..4] %></td>
+			<td><%= student.accuracy.to_s %></td>
+			</tr>
+			<% end %>
+       
+
+				<% @noname.each do |student|  %>
+				<tr> 
+				<td>
+				<%if(student.real_name.to_s != "")%>
+
+
+				<%= raw("<a href=\"") + "/details?" + student.name.to_s + raw("\"") %> title ="Student Details" class = "ajax"><%= student.real_name.to_s%></a>
+
+				<%else%>
+				( <%= student.name.to_s %> ) 
+				<span class="hotspot" style="font-size:9px;" onmouseover="tooltip.show('Yet to login ');" onmouseout="tooltip.hide();">[?]</span>
+				<%end%>
+				</td>
+				<td><%= student.points.to_s %></td>
+				<td><%= student.total_time_played.to_s[0..4] %></td>
+				<td><%= student.accuracy.to_s %></td>
+				</tr>
+				<% end %>
+	 </tbody>
+	</table>
+	
+
+
+	</center>
+
+
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>
+</body>
+</html>

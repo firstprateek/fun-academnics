@@ -1,0 +1,87 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mathfact</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="Mathfact" />
+     <meta name="revisit-after" content="1 day" />
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+	<%= stylesheet_link_tag "application.css","site.css", "commmon.css", "homepage.css" %>
+	 
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+            <div id="page-header">
+             <h1 title="Mathfact">
+	     <%= link_to "Home", root_path %></h1>
+        <div id="page-header-menu">
+            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+            <a id="page-header-mathfact" href="mathfact.htm" title="MathFact">MathFact</a>
+            <a id="page-header-team" href="team.htm" title="Team">Team</a>
+            <a id="page-header-contact" href="contact.htm" title="Contact">Contact</a>
+            </div>
+    </div>
+    
+	
+
+
+    <div id="page-submenu">
+             
+    </div>
+
+<div id="page-inner">
+	<div id="page-banner" class="banner-homepage">
+	</div>
+	<div class="pg-content-main">
+		<div class="block-left">
+			<h3>Students</h3>
+			<p class="bigtext">Students can play game(s) to compete with their class by logging in or they can use quick play mode to play game without saving their progress. Students are required to ask their teacher to register their class on this website in order to receive login credentials from them.</p>
+		</div>
+		<div class="block-right">
+			<h3>Teachers</h3>
+			<p class="bigtext">Teachers can register their class and analyze their class progress.</p>
+		</div>
+		<div class="clear"></div>
+		<div class="block-left">
+           <%= link_to('Login', new_user_session_path,:class => 'btn_custom')  %>
+		<!--	<a class="btn_custom" href="#">Login</a> -->
+	<%#	binding.pry %>
+	<!-- <%=button_to "Quick Play!", { :controller => 'freeplay', :action => 'show' }, :method => :get %> -->
+		<%= link_to('Quick Play!', "/freeplay",:class => 'btn_custom')  %>
+		
+			<!-- <a class="btn_custom" href="#">Quick play!</a> -->
+        </div>		
+		<div class="block-right">
+			   <%= link_to('Login', new_user_session_path,:class => 'btn_custom')  %>
+				<%= link_to('Sign up', new_user_registration_path,:class => 'btn_custom')  %>
+		</div>
+		 
+		<div class="clear"></div>
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+	<!--<div id="page-footer">
+		&copy; 2012 Mathfact. All Rights Reserved. <a href="blog/default.htm">Blog</a> <a href="legal/privacy.htm">Privacy Policy</a> <a href="legal/tos.htm">Terms of Service</a>
+	</div>
+</div>-->
+<div id="optout">
+<p>&copy; 2012 MathFact. All Rights Reserved.</p>
+</div>
+
+
+</body>
+</html>

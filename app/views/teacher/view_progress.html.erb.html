@@ -1,0 +1,139 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interactive Education</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="MATHFACT" />
+
+    <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" />
+	<%= stylesheet_link_tag "application" %>
+	<%= javascript_include_tag "application" %>
+   <%#= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+	<script>
+				$(document).ready(function(){
+				
+					
+					//Examples of how to assign the ColorBox event to elements
+					$(".ajax").colorbox();
+					$(".youtube").colorbox({iframe:true, innerWidth:425, innerHeight:344});
+					$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+					$(".inline").colorbox({inline:true, width:"50%"});
+					//Example of preserving a JavaScript event for inline calls.
+				
+					$("#click").click(function(){ 
+										$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+										return false;
+									});
+				});
+	</script>
+	</head>
+    <body>
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+            <div id="page-header">
+            	 <h1 title="Interactive Education">
+		     <%= link_to "Home", root_path %></h1>
+	        <div id="page-header-menu">
+	            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+	            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+	            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+	             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+	            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+	            <a id="page-header-mathfact" href="/product" title="Interactive Education">Interactive Education</a>
+	            <a id="page-header-team" href="/team" title="Team">Team</a>
+            <!--<a id="page-header-logout" href="logout.htm" title="Logout">Logout</a> -->
+	 <%= link_to('Logout', destroy_user_session_path ,:id => 'page-header-logout',:title => 'Logout', :method => 'delete') %>
+         
+  </div>
+    </div>
+    
+	
+<% @data = User.where(:teacher_id => current_user.name).order(:real_name) %>
+<%
+@havename = Array.new
+@noname = Array.new
+
+  @data.each do |student| 
+	if(student.real_name.to_s == "")
+		@noname.push(student)
+	else
+		@havename.push(student)
+	end
+  end
+%>
+
+<%#binding.pry%>
+    <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+		<h3>	<%= @message %> </h3>
+
+		<h2>Score History</h2><br>
+			<h2><em><%= User.where(:name => params[:student_id]).first.real_name %></em></h2>
+
+<center>
+
+
+
+
+<% @progress_dict.each do |key,progress_details| %>
+<br>
+<h1><%= Game.where(:game_id => key).first.game_name %></h1>
+
+<br>
+<table  class="dataTable">
+	<thead>
+	<tr>
+		<td>Level Name</td>
+		<td>Score</td>
+		<td>Accuracy</td>
+	</tr>
+	</thead>
+	<tbody>
+	<% progress_details.each do |detail| %>
+		<tr>
+			<td><%= detail.level_name %></td>
+			<td><%= detail.score %></td>
+			<td><%= detail.accuracy %></td>
+		</tr>
+	</tbody>
+	<% end %>
+
+</table>
+<% end %>
+
+
+		          
+<br />	
+
+	</center>
+
+
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>
+</body>
+</html>

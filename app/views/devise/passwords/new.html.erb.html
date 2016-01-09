@@ -1,0 +1,85 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Educational Platform | Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="MATHFACT" />
+    <meta itemprop="name" content="Mathfact" />
+  
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+	<%= stylesheet_link_tag "application" %>
+   <%#= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+
+	</head>
+    <body>
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+            <div id="page-header">
+            	 <h1 title="Mathfact">
+		     <%= link_to "Home", root_path %></h1>
+	        <div id="page-header-menu">
+	            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+	            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+	            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+	             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+	            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+	            <a id="page-header-mathfact" href="/product" title="MathFact">MathFact</a>
+	            <a id="page-header-team" href="/team" title="Team">Team</a>
+            <!--<a id="page-header-logout" href="logout.htm" title="Logout">Logout</a> -->
+	 <%= link_to('Login', new_user_session_path ,:id => 'page-header-login',:title => 'Login') %>
+         
+  </div>
+    </div>
+    
+	
+
+
+    <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+		<br><br>
+		<div class="block-left">
+  
+			<h2>Forgot your password?</h2>
+
+			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+			  <%= devise_error_messages! %>
+
+			  <div><%= f.label "Email" %><br />
+			  <%= f.text_field :email %></div>
+
+			  <div><%= f.submit "Send me reset password instructions" %></div>
+			<% end %>
+
+			<%= render :partial => "devise/shared/links" %>
+        </div>
+		<div class="clear"></div>
+
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+
+<div id="optout">
+<p>&copy; 2012 Educational Platform. All Rights Reserved.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<assignment>
+  <AsgnData>
+    <AsgnName>Addition</AsgnName>
+    <AsgnNum>2</AsgnNum>
+  </AsgnData>
+  <question>
+    <question>1+1</question>
+    <answer>2</answer>
+    <type>Text</type>
+  </question>
+</assignment>

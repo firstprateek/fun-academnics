@@ -1,0 +1,63 @@
+
+<%= @message %> 
+
+<ul class="nav">
+ <% if user_signed_in? %>
+	<li>
+	<%= link_to("Account Settings",edit_user_registration_path,:method => 'get')%>
+	</li>   
+ 	&nbsp;&nbsp;&nbsp;
+	<li>
+    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
+    </li>
+
+ <% end %>
+</ul>
+
+<%   
+#leaderboard processing
+@data = User.where(:teacher_id => current_user.teacher_id).sort{|t2,t1|t1.points <=> t2.points}.first(10)
+%>
+
+<h2>Student page</h2>
+<center>
+Welcome <%=current_user.name%> !  
+<br>
+<%  if(current_user.real_name == "") %>
+	<h4>Please Fill In your Real Name
+	<%= link_to("Edit Account Settings",edit_user_registration_path,:method => 'get')%> 
+	</h4>
+<% end %>
+
+<h4>Personal Data </h4>
+Username : <%=current_user.name%>
+Pass : <%=current_user.unenc_pass%>
+<br>
+Name : <%=current_user.real_name%>&nbsp;
+Email : <%=current_user.email%>&nbsp;
+School Name : <%=current_user.school_name%>&nbsp;
+Grade : <%=current_user.class_name%>&nbsp;
+<br>
+Score: <%=current_user.points%>&nbsp;
+Total Time Played : <%=current_user.total_time_played%>&nbsp;
+Accuracy : <%=current_user.accuracy%>&nbsp;
+
+<h4>LeaderBoard</h4>
+<table border="1">
+<tr>
+	<td>Student's Name</td>
+	<td>Score</td>
+	<td>Total Time Played</td>
+	
+</tr>
+	<% @data.each do |student|  %>
+<%	#binding.pry%>
+	<tr>
+		<td><%= student.name.to_s %> </td>
+		<td><%=student.points.to_s  %></td> 
+		<td><%=student.total_time_played.to_s  %></td> 
+	</tr>
+	
+	<% end %>
+</table>
+</center>

@@ -1,0 +1,122 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interactive Education</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="Mathfact - Connect to Your Audience." />
+   
+   <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico"/>
+	<%= stylesheet_link_tag "application.css","site.css", "commmon.css", "homepage.css" %>
+
+  <%= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+<%#binding.pry%>
+	<script>
+				$(document).ready(function(){
+					//Examples of how to assign the ColorBox event to elements
+					$(".ajax").colorbox();
+					$(".youtube").colorbox({iframe:true, innerWidth:425, innerHeight:344});
+					$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+					$(".inline").colorbox({inline:true, width:"50%"});
+					//Example of preserving a JavaScript event for inline calls.
+
+					$("#click").click(function(){ 
+										$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+										return false;
+									});
+				});
+	</script>
+
+</head>
+
+<body>	 
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+            <div id="page-header">
+             <h1 title="Interactive Education">
+	     <%= link_to "Home", root_path %></h1>
+        <div id="page-header-menu">
+            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+            <a id="page-header-mathfact" href="/product" title="Interactive Education">Interactive Education</a>
+            <a id="page-header-team" href="/team" title="Team">Team</a>
+           <!-- <a id="page-header-login" href= <%= new_user_session_path  %> title="Login">Login</a> -->
+            <%= link_to('Login', new_user_session_path,:id => 'page-header-login',:title => 'Login')  %>
+		</div>
+    </div>
+    
+	
+	<%#binding.pry%>
+    <div id="page-submenu">
+          
+    </div>
+
+<div id="page-inner">
+	<div id="page-banner" class="banner-homepage">
+	      
+		<div style="padding-left: 30px;
+					padding-top: 320px;">
+					
+					<p align="left">
+
+					</p> 
+			</div>
+	</div>
+	<div class="pg-content-main">
+		<div class="block-left">
+			<h3>Students</h3>
+			<p class="bigtext">Ask your teacher to sign up for your class to use the product!</p>
+			<p align="left"><a class="btn btn-primary btn-medium ajax" title="Interactive Education" href="bull/freeplay">Quick Play!</a></p> 
+			<%#=button_to "Quick Play!", { :controller => 'logger', :action => 'freeplay' }, :class => 'btn_custom ajax', :method => :get %>
+			
+			
+		</div>
+		<div class="block-right">
+			<h3>Teachers</h3>
+			<p class="bigtext">Interactive Educational Platform is a platform where you can assign tasks such as games or assignment to the students. You can register your class where students would compete with each other and you can see their progress!</p>
+			
+			
+			<%= link_to('Register', new_user_registration_path,:class => 'btn btn-primary btn-medium')  %>
+		</div>
+		<div class="clear"></div>
+		<div class="block-left">
+		
+		
+    </div>
+			<!-- <a class="btn_custom" href="#">Quick play!</a> -->
+        </div>		
+		<div class="block-right">
+			   <%#=link_to('Login', new_user_session_path,:class => 'btn_custom')  %>
+				
+		</div>
+		 
+		<div class="clear"></div>
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+	<!--<div id="page-footer">
+		&copy; 2012 MathFact. All Rights Reserved. <a href="blog/default.htm">Blog</a> <a href="legal/privacy.htm">Privacy Policy</a> <a href="legal/tos.htm">Terms of Service</a>
+	</div>
+</div>-->
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>
+
+
+</body>
+</html>

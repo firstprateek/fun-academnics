@@ -1,0 +1,273 @@
+<quiz TYPE="Subtraction 1 to 100">
+  <level NAME="level8"/>
+  <Items>
+    <Item>
+      <question>45 - 25</question>
+      <correct>20</correct>
+    </Item>
+    <Item>
+      <question>46 - 45</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>47 - 8</question>
+      <correct>39</correct>
+    </Item>
+    <Item>
+      <question>48 - 1</question>
+      <correct>47</correct>
+    </Item>
+    <Item>
+      <question>49 - 9</question>
+      <correct>40</correct>
+    </Item>
+    <Item>
+      <question>50 - 9</question>
+      <correct>41</correct>
+    </Item>
+    <Item>
+      <question>51 - 11</question>
+      <correct>40</correct>
+    </Item>
+    <Item>
+      <question>52 - 33</question>
+      <correct>19</correct>
+    </Item>
+    <Item>
+      <question>53 - 7</question>
+      <correct>46</correct>
+    </Item>
+    <Item>
+      <question>54 - 22</question>
+      <correct>32</correct>
+    </Item>
+    <Item>
+      <question>55 - 27</question>
+      <correct>28</correct>
+    </Item>
+    <Item>
+      <question>56 - 15</question>
+      <correct>41</correct>
+    </Item>
+    <Item>
+      <question>57 - 11</question>
+      <correct>46</correct>
+    </Item>
+    <Item>
+      <question>58 - 6</question>
+      <correct>52</correct>
+    </Item>
+    <Item>
+      <question>59 - 17</question>
+      <correct>42</correct>
+    </Item>
+    <Item>
+      <question>60 - 14</question>
+      <correct>46</correct>
+    </Item>
+    <Item>
+      <question>61 - 13</question>
+      <correct>48</correct>
+    </Item>
+    <Item>
+      <question>62 - 22</question>
+      <correct>40</correct>
+    </Item>
+    <Item>
+      <question>63 - 8</question>
+      <correct>55</correct>
+    </Item>
+    <Item>
+      <question>64 - 33</question>
+      <correct>31</correct>
+    </Item>
+    <Item>
+      <question>65 - 10</question>
+      <correct>55</correct>
+    </Item>
+    <Item>
+      <question>66 - 19</question>
+      <correct>47</correct>
+    </Item>
+    <Item>
+      <question>67 - 44</question>
+      <correct>23</correct>
+    </Item>
+    <Item>
+      <question>68 - 22</question>
+      <correct>46</correct>
+    </Item>
+    <Item>
+      <question>69 - 29</question>
+      <correct>40</correct>
+    </Item>
+    <Item>
+      <question>70 - 19</question>
+      <correct>51</correct>
+    </Item>
+    <Item>
+      <question>71 - 31</question>
+      <correct>40</correct>
+    </Item>
+    <Item>
+      <question>72 - 35</question>
+      <correct>37</correct>
+    </Item>
+    <Item>
+      <question>73 - 39</question>
+      <correct>34</correct>
+    </Item>
+    <Item>
+      <question>74 - 24</question>
+      <correct>50</correct>
+    </Item>
+    <Item>
+      <question>75 - 38</question>
+      <correct>37</correct>
+    </Item>
+    <Item>
+      <question>76 - 5</question>
+      <correct>71</correct>
+    </Item>
+    <Item>
+      <question>77 - 10</question>
+      <correct>67</correct>
+    </Item>
+    <Item>
+      <question>78 - 5</question>
+      <correct>73</correct>
+    </Item>
+    <Item>
+      <question>79 - 12</question>
+      <correct>67</correct>
+    </Item>
+    <Item>
+      <question>80 - 25</question>
+      <correct>55</correct>
+    </Item>
+    <Item>
+      <question>81 - 15</question>
+      <correct>66</correct>
+    </Item>
+    <Item>
+      <question>82 - 9</question>
+      <correct>73</correct>
+    </Item>
+    <Item>
+      <question>83 - 38</question>
+      <correct>45</correct>
+    </Item>
+    <Item>
+      <question>84 - 36</question>
+      <correct>48</correct>
+    </Item>
+    <Item>
+      <question>85 - 27</question>
+      <correct>58</correct>
+    </Item>
+    <Item>
+      <question>86 - 12</question>
+      <correct>74</correct>
+    </Item>
+    <Item>
+      <question>87 - 9</question>
+      <correct>78</correct>
+    </Item>
+    <Item>
+      <question>88 - 45</question>
+      <correct>43</correct>
+    </Item>
+    <Item>
+      <question>89 - 32</question>
+      <correct>57</correct>
+    </Item>
+    <Item>
+      <question>90 - 5</question>
+      <correct>85</correct>
+    </Item>
+    <Item>
+      <question>90 - 85</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>91 - 24</question>
+      <correct>67</correct>
+    </Item>
+    <Item>
+      <question>91 - 59</question>
+      <correct>32</correct>
+    </Item>
+    <Item>
+      <question>92 - 3</question>
+      <correct>89</correct>
+    </Item>
+    <Item>
+      <question>92 - 89</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>93 - 36</question>
+      <correct>57</correct>
+    </Item>
+    <Item>
+      <question>93 - 56</question>
+      <correct>37</correct>
+    </Item>
+    <Item>
+      <question>94 - 41</question>
+      <correct>53</correct>
+    </Item>
+    <Item>
+      <question>94 - 47</question>
+      <correct>47</correct>
+    </Item>
+    <Item>
+      <question>95 - 1</question>
+      <correct>94</correct>
+    </Item>
+    <Item>
+      <question>95 - 56</question>
+      <correct>39</correct>
+    </Item>
+    <Item>
+      <question>96 - 20</question>
+      <correct>76</correct>
+    </Item>
+    <Item>
+      <question>96 - 65</question>
+      <correct>31</correct>
+    </Item>
+    <Item>
+      <question>97 - 31</question>
+      <correct>66</correct>
+    </Item>
+    <Item>
+      <question>97 - 53</question>
+      <correct>44</correct>
+    </Item>
+    <Item>
+      <question>98 - 18</question>
+      <correct>80</correct>
+    </Item>
+    <Item>
+      <question>98 - 81</question>
+      <correct>17</correct>
+    </Item>
+    <Item>
+      <question>99 - 17</question>
+      <correct>82</correct>
+    </Item>
+    <Item>
+      <question>99 - 89</question>
+      <correct>10</correct>
+    </Item>
+    <Item>
+      <question>100 - 41</question>
+      <correct>59</correct>
+    </Item>
+    <Item>
+      <question>100 - 74</question>
+      <correct>26</correct>
+    </Item>
+  </Items>
+</quiz>

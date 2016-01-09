@@ -1,0 +1,46 @@
+<div>
+<!--
+
+	<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" WIDTH="320" HEIGHT="240" id="game" ALIGN="">
+	<PARAM NAME=movie VALUE="game.swf"> 
+	<PARAM NAME=FlashVars value="studentname=Jaran&studentid=narmadanoname" />	
+	<PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#333399> 
+	<EMBED src="/assets/flash/game.swf" quality=high bgcolor=#333399 WIDTH="640" HEIGHT="480" NAME="game" ALIGN="" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED> 
+	</OBJECT>
+	
+	
+-->
+
+<% if (@game_id == "asgn") %>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="550" height="480" id="myFlashMovie" align="middle">
+    <param name="movie" value="assets/flash/Assignment.swf" />
+   <%=  raw("<param name=FlashVars value=\"student_id=") + current_user.name.to_s + raw("&teacher_id=") + current_user.teacher_id.to_s + raw("&game_id=") + @game_id.to_s+ raw("\"/>") %> 
+    <object type="application/x-shockwave-flash" data="assets/flash/Assignment.swf" width="640" height="480">
+        <param name="movie" value="assets/flash/Assignment.swf" />
+   <%=  raw("<param name=FlashVars value=\"student_id=") + current_user.name.to_s + raw("&teacher_id=") + current_user.teacher_id.to_s + raw("&game_id=") + @game_id.to_s+ raw("\"/>") %> 
+        <a href="hassets/freeplay/ttp://www.adobe.com/go/getflash">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+        </a>
+    </object>
+</object>
+
+<% elsif (@game_id == "gm" )%>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="550" height="480" id="myFlashMovie" align="middle">
+    <param name="movie" value="assets/flash/Game.swf" />
+   <%=  raw("<param name=FlashVars value=\"student_id=") + current_user.name.to_s + raw("&teacher_id=") + current_user.teacher_id.to_s + raw("&game_id=") + @game_id.to_s+ raw("\"/>") %> 
+    <object type="application/x-shockwave-flash" data="assets/flash/Game.swf" width="640" height="480">
+        <param name="movie" value="assets/flash/Game.swf" />
+   <%=  raw("<param name=FlashVars value=\"student_id=") + current_user.name.to_s + raw("&teacher_id=") + current_user.teacher_id.to_s + raw("&game_id=") + @game_id.to_s+ raw("\"/>") %> 
+        <a href="hassets/freeplay/ttp://www.adobe.com/go/getflash">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+        </a>
+    </object>
+</object>
+
+<% end %>
+
+
+
+</script>
+</div>

@@ -1,0 +1,109 @@
+﻿<quiz TYPE="Table x 15">
+  <level NAME="level24"/>
+  <Items>
+    <Item>
+      <question>15 x 0</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>0 x 15</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>15 x 1</question>
+      <correct>15</correct>
+    </Item>
+    <Item>
+      <question>1 x 15</question>
+      <correct>15</correct>
+    </Item>
+    <Item>
+      <question>15 x 2</question>
+      <correct>30</correct>
+    </Item>
+    <Item>
+      <question>2 x 15</question>
+      <correct>30</correct>
+    </Item>
+    <Item>
+      <question>15 x 3</question>
+      <correct>45</correct>
+    </Item>
+    <Item>
+      <question>3 x 15</question>
+      <correct>45</correct>
+    </Item>
+    <Item>
+      <question>15 x 4</question>
+      <correct>60</correct>
+    </Item>
+    <Item>
+      <question>4 x 15</question>
+      <correct>60</correct>
+    </Item>
+    <Item>
+      <question>15 x 5</question>
+      <correct>75</correct>
+    </Item>
+    <Item>
+      <question>5 x 15</question>
+      <correct>75</correct>
+    </Item>
+    <Item>
+      <question>15 x 6</question>
+      <correct>90</correct>
+    </Item>
+    <Item>
+      <question>6 x 15</question>
+      <correct>90</correct>
+    </Item>
+    <Item>
+      <question>15 x 7</question>
+      <correct>105</correct>
+    </Item>
+    <Item>
+      <question>7 x 15</question>
+      <correct>105</correct>
+    </Item>
+    <Item>
+      <question>15 x 8</question>
+      <correct>120</correct>
+    </Item>
+    <Item>
+      <question>8 x 15</question>
+      <correct>120</correct>
+    </Item>
+    <Item>
+      <question>15 x 9</question>
+      <correct>135</correct>
+    </Item>
+    <Item>
+      <question>9 x 15</question>
+      <correct>135</correct>
+    </Item>
+    <Item>
+      <question>15 x 10</question>
+      <correct>150</correct>
+    </Item>
+    <Item>
+      <question>10 x 15</question>
+      <correct>150</correct>
+    </Item>
+    <Item>
+      <question>15 x 11</question>
+      <correct>165</correct>
+    </Item>
+    <Item>
+      <question>11 x 15</question>
+      <correct>165</correct>
+    </Item>
+    <Item>
+      <question>15 x 12</question>
+      <correct>180</correct>
+    </Item>
+    <Item>
+      <question>12 x 15</question>
+      <correct>180</correct>
+    </Item>
+  </Items>
+</quiz>

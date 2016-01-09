@@ -1,0 +1,15 @@
+<% @student = User.where(:name => @id).first %>
+	
+<game>
+	<id><%= @id %></id>
+	<name><%= @student.real_name %></name>
+	<teacher_id><%= @student.teacher_id %></teacher_id>
+	<teacher_name><%= @student.teacher_name %></teacher_name>
+	<points><%= @student.points %></points>
+	<totalTime><%= @student.total_time_played %></totalTime>
+	<accuracy><%= @student.accuracy %></accuracy>
+	<levelString><%= @student.level_String %></levelString>
+	<timeString><%= @student.time_String %></timeString>
+	<totalCorrect><%= @student.total_correct %></totalCorrect>
+	<totalWrong><%= @student.total_wrong %></totalWrong>
+</game>

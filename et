@@ -1,0 +1,58 @@
+[1mHelp[0m
+  help               Show a list of commands. Type `help <foo>` for information about <foo>.
+
+[1mContext[0m
+  cd                 Move into a new context (object or scope).
+  ls                 Show the list of vars and methods in the current scope.
+  pry-backtrace      Show the backtrace for the Pry session.
+  reset              Reset the REPL to a clean state.
+  whereami           Show the code context for the session. (whereami <n> shows <n> extra lines of code around the invocation line. Default: 5)
+  wtf?               Show the backtrace of the most recent exception
+
+[1mEditing[0m
+  !                  Clear the input buffer. Useful if the parsing process goes wrong and you get stuck in the read loop.
+  amend-line         Amend a line of input in multi-line mode.
+  edit               Invoke the default editor on a file.
+  edit-method        Edit the source code for a method.
+  hist               Show and replay Readline history. Aliases: history
+  play               Play back a string variable or a method or a file as input.
+  show-input         Show the contents of the input buffer for the current multi-line expression.
+
+[1mIntrospection[0m
+  ri                 View ri documentation. e.g `ri Array#each`
+  show-command       Show the source for CMD.
+  show-doc           Show the comments above METH. Aliases: ?
+  show-method        Show the source for METH. Aliases: $, show-source
+  stat               View method information and set _file_ and _dir_ locals.
+
+[1mInput and output[0m
+  .<shell command>   All text following a '.' is forwarded to the shell.
+  cat                Show code from a file, Pry's input buffer, or the last exception.
+  gist               Gist a method or expression history to github.
+  save-file          Export to a file using content from the REPL.
+  shell-mode         Toggle shell mode. Bring in pwd prompt and file completion.
+
+[1mNavigating pry[0m
+  !pry               Start a Pry session on current self; this even works mid multi-line expression.
+  exit               Pop the previous binding (does NOT exit program). Aliases: quit
+  exit-all           End the current Pry session (popping all bindings) and returning to caller. Accepts optional return value. Aliases: !!@
+  exit-program       End the current program. Aliases: quit-program, !!!
+  jump-to            Jump to a binding further up the stack, popping all bindings below.
+  nesting            Show nesting information.
+  switch-to          Start a new sub-session on a binding in the current stack (numbered by nesting).
+
+[1mGems[0m
+  gem-cd             Change working directory to specified gem's directory.
+  gem-install        Install a gem and refresh the gem cache.
+  gem-list           List and search installed gems.
+
+[1mCommands[0m
+  import-set         Import a command set
+  install-command    Install a disabled command.
+
+[1mMisc[0m
+  pry-version        Show Pry version.
+  reload-method      Reload the source file that contains the specified method
+  req                Require file(s) and expand their paths.
+  simple-prompt      Toggle the simple prompt.
+  toggle-color       Toggle syntax highlighting.

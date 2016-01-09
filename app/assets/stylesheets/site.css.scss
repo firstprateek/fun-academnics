@@ -1,0 +1,104 @@
+
+body{background:#f1f1f1 url(site/bkg-mainpage-topfade.jpg) repeat-x top;margin:0;padding:0 0 25px;text-align:center;font-family:arial,helvetica,lucida,tahoma,verdana,sans-serif;font-size:12px;color:#666;}
+
+a{color:#2a68d2;text-decoration:none;}
+a:hover{color:#f08528;text-decoration:underline;}
+a:active{outline:none;}
+a:focus{-moz-outline-style:none;}
+
+#mainpage{position:relative;width:978px;margin:0 auto;text-align:left;}
+
+#page-header{position:relative;width:978px;height:90px;}#page-header a{overflow:hidden;margin:0;text-indent:-9000px;outline:none;}
+
+#page-header h1{position:absolute;top:0;left:0;width:246px;height:90px;margin:0;padding:0;}
+
+#page-header h1 a{display:block;background:url(site/bkg-mainpage-header.png) no-repeat 0 0;width:249px;height:90px;}
+
+#page-header h1 a:hover{background-position:0 -90px;}
+
+/*****Home button config******/
+#page-header a#page-header-home{position:absolute;top:0;left:249px;display:block;background:url(site/bkg-mainpage-header.png) no-repeat -249px 0;width:177px;height:90px;}
+
+#page-header a#page-header-home:hover{background-position:-249px -90px;}
+
+#page-header a#page-header-home.page-header-home-active{background-position:-249px -180px;}
+
+/*****mathfact button config******/
+
+#page-header a#page-header-mathfact{position:absolute;top:0;left:426px;display:block;background:url(site/bkg-mainpage-header.png) no-repeat -426px 0;width:183px;height:90px;}
+
+#page-header a#page-header-mathfact:hover{background-position:-426px -90px;}
+
+#page-header a#page-header-mathfact.page-header-mathfact-active{background-position:-426px -180px;}
+
+/*****team button config******/
+
+#page-header a#page-header-team{position:absolute;top:0;left:609px;display:block;background:url(site/bkg-mainpage-header.png) no-repeat -609px 0;width:184px;height:90px;}
+
+#page-header a#page-header-team:hover{background-position:-609px -90px;}
+
+#page-header a#page-header-team.page-header-team-active{background-position:-609px -180px;}
+
+/*****login button config******/
+
+#page-header a#page-header-login{position:absolute;top:0;left:793px;display:block;background:url(site/bkg-mainpage-header.png) no-repeat -793px 0;width:185px;height:90px;}
+
+#page-header a#page-header-login:hover{background-position:-793px -90px;}
+
+#page-header a#page-header-login.page-header-contact-active{background-position:-793px -180px;}
+
+/*****logout button config******/
+
+#page-header a#page-header-logout{position:absolute;top:0;left:793px;display:block;background:url(site/bkg-mainpage-header-logout.png) no-repeat -793px 0;width:185px;height:90px;}
+
+#page-header a#page-header-logout:hover{background-position:-793px -90px;}
+
+#page-header a#page-header-logout.page-header-logout-active{background-position:-793px -180px;}
+
+
+#page-submenu a{text-decoration:none;color:#454545;text-shadow:0 1px 0 #FFF;}#page-submenu a:hover{text-decoration:underline;color:#2A68D2;}#page-submenu a.topsubnav-active{text-decoration:none;font-weight:bold;color:#000;}#topsubnav{position:absolute;left:51px;bottom:11px;}#topsubnav a{margin-right:24px;}#page-inner{
+	padding:0 8px;
+	line-height:1.6em;
+}#page-inner #page-banner{position:relative;width:962px;}#page-inner .pg-content-top{background:url(site/bkg-mainpage-inner-tb.gif) no-repeat 0 0;width:962px;height:9px;margin:0;overflow:hidden;}#page-inner .pg-content-top-subnav{background:url(site/bkg-mainpage-inner-tb.gif) no-repeat 0 -18px;width:962px;height:9px;margin:0;overflow:hidden;}#page-inner .pg-content-btm{background:url(site/bkg-mainpage-inner-tb.gif) no-repeat 0 -9px;width:962px;height:9px;margin:0;overflow:hidden;}#page-inner .pg-content-nav{position:relative;background:#fff;border-left:1px solid #e1e1e1;border-right:1px solid #e1e1e1;border-top:1px solid #e1e1e1;padding:20px 40px;overflow:hidden;}#page-inner .pg-content-pane{position:relative;background:url(site/bkg-mainpage-inner-b.gif.htm) repeat-y;padding:10px 30px;overflow:hidden;}#page-inner .pg-content-nav .pn-left{position:absolute;top:8px;left:50px;}#page-inner .pg-content-nav .pn-left a{background:url(../icons/ico-footnav-blue-left.gif.htm) no-repeat left;padding-left:16px;text-decoration:none;}#page-inner .pg-content-nav .pn-right{position:absolute;top:8px;right:50px;}#page-inner .pg-content-nav .pn-right a{background:url(../icons/ico-footnav-blue-right.gif.htm) no-repeat right;padding-right:16px;text-decoration:none;}#page-inner .pg-content-nav .pn-center{position:absolute;top:8px;left:380px;width:200px;text-align:center;}#page-inner .pg-content-nav .pn-center a{text-decoration:none;color:#999;}#page-inner .pg-content-main{background:#fff;border-left:1px solid #e1e1e1;border-right:1px solid #e1e1e1;margin:0;padding:0 50px 25px 50px;overflow:hidden;line-height:1.7em;color:#666;}#page-inner .pg-content-main{min-height:200px;}#page-inner .pg-content-main.main-sidebar{padding:25px 15px 25px 50px;}#page-inner .pg-content-logo{background:#fff;border-top:1px solid #E1E1E1;border-left:1px solid #E1E1E1;border-right:1px solid #E1E1E1;overflow:hidden;}#content{width:620px;padding-top:10px;float:left;}#sidebar{width:220px;padding-top:10px;font-size:11px;float:right;}#sidebar h3{font-size:16px;}#sidebar h4{margin-top:0;}#sidebar strong{font-size:12px;}#topsubtab{
+	position:absolute;
+	right:24px;
+	bottom:5px;
+}#page-footer{padding:20px 50px;color:#666;}#page-footer a{margin-left:15px;}#page-submenu{
+	position:relative;
+	height:30px;
+	font-family:"Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+	margin-top: 0;
+	margin-right: 7px;
+	margin-bottom: 0;
+	margin-left: 7px;
+}#optout{
+	position:relative;
+	background:url(site/bkg-optout.gif) repeat-x top;
+	width:960px;
+	height:51px;
+	margin:0 auto;
+	text-align:left;
+	margin:30px auto;
+	color:#fff;
+}#optout p{
+	margin:0;
+	padding:18px 0 0 32px;
+}#optout a{color:#fff;}#optout-btn{display:block;position:absolute;top:13px;left:40px;background:url(site/bkg-optout-btn.gif) no-repeat 0 0;width:93px;height:26px;line-height:26px;overflow:hidden;text-indent:-9999px;border:0 none;cursor:pointer;cursor:hand;}#optout-iab{display:block;background:url(site/bkg-iab.gif) no-repeat 0 0;position:absolute;top:8px;right:40px;width:59px;height:32px;line-height:32px;overflow:hidden;text-indent:-9999px;}#optout-nai{
+	display:block;
+	position:absolute;
+	top:7px;
+	right:139px;
+	width:166px;
+	height:34px;
+	line-height:26px;
+	overflow:hidden;
+	text-indent:-9999px;
+	background-image: url(common/oracle.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+img#wall-of-fame
+{
+	float: left;
+}

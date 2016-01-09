@@ -1,0 +1,6 @@
+<% @available_tasks.each do |task_details| %>
+		<a href=
+			<%= "/teacher/assign_task?type=game&game_id=" + task_details.game_id.to_s + "&teacher_id=" + current_user.name.to_s + "&url=" + task_details.url.to_s if task_details.type == "game"%>
+			<%= "/teacher/assign_task?type=assignment&game_id=" + task_details.game_id.to_s + "&url=" + task_details.url.to_s if task_details.type == "assignment"%>
+		><%= task_details.game_name %></option><br />
+<% end %>

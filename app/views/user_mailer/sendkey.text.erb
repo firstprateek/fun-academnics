@@ -1,0 +1,13 @@
+Hi! Your child <%= @user.real_name.to_s %> has started using Interaction Education service. To see his/her progress, visit following page.
+
+URL : <%= "ec2-54-235-13-176.compute-1.amazonaws.com/parent/index" %>
+
+Following are credentials required.
+
+Your child's username: <%= @new_student_id %>
+Your secret key: <%= @user.secret_key %>
+
+We look forward for your child's progress!
+
+Regards,
+Interactive Education Team

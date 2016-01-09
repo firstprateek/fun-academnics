@@ -1,0 +1,21 @@
+
+<%= @message %> 
+
+<ul class="nav">
+ <% if user_signed_in? %>
+    <li>
+    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
+    </li>
+ <% end %>
+</ul>
+<%
+
+@studentdata = User.where(:teacher_id => current_user.name)
+
+%>
+<h3>Teacher Page</h3>
+<h4>Student List </h4>
+<% @studentdata.each do |student|  %>
+<%= student.name.to_s + "   " + student.real_name.to_s + "  " + student.unenc_pass.to_s + "  " + student.points.to_s  %> <br>
+<% end %>
+

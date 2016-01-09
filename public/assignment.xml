@@ -1,0 +1,34 @@
+<assignment>
+<questions>
+	<question>
+		<question> 2 + 2 </question>
+		<answer> 4 </answer>
+		<type> Fill </type>
+	</question>
+	<question>
+		<question> What is area of square with side 3 cm </question>
+		<answer> 9 </answer>
+		<type> Fill </type>
+	</question>
+	<question>
+		<question> 5 X 3 =  </question>
+		<type> MCQ </type>
+		<answer>15,20,25,30</answer>
+	</question>
+	<question>
+		<question> 2+6 </question>
+		<answer> 8 </answer>
+		<type> Fill </type>
+	</question>
+	<question>
+		<question> What is perimeter of square with side 4 cm </question>
+		<answer> 16 </answer>
+		<type> Fill </type>
+	</question>
+	<question>
+		<question> 5 X 5 =  </question>
+		<type> MCQ </type>
+		<answer>25,9,0,16</answer>
+	</question>
+</questions>
+</assignment>

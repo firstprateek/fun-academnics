@@ -1,0 +1,95 @@
+<!--<h2>Edit <%= resource_name.to_s.humanize %></h2>
+-->
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+            <div id="page-header">
+            	 <h1 title="MathFact">
+		     <%= link_to "Home", root_path %></h1>
+	        <div id="page-header-menu">
+	            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+	            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+	            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+	             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+	            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+	            <a id="page-header-mathfact" href="/product" title="MathFact">MathFact</a>
+	            <a id="page-header-team" href="/team" title="Team">Team</a>
+            <!--<a id="page-header-logout" href="logout.htm" title="Logout">Logout</a> -->
+	 <%= link_to('Logout', destroy_user_session_path ,:id => 'page-header-logout',:title => 'Logout', :method => 'delete') %>
+         
+  </div>
+    </div>
+    
+    <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+		<br><br>
+
+
+
+<h2>Update Profile Settings</h2>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+<!--
+<div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+ <%= f.password_field :current_password %></div>
+-->
+
+<% if (current_user.real_name.to_s == "" ) %> 
+<p><%= f.label "Username" %>
+<%= f.text_field :name %><span class="help-inline">This would be your login name</span>
+<% $current_user_name = current_user.name %>
+</p>
+<% end %>
+
+<p><%= f.label "Full Name" %>
+<%= f.text_field :real_name %><span class="help-inline">Name that would appear to everyone !</span></p>
+<!--
+  <div><%= f.label :email %><br/>
+  <%= f.text_field :email %></div>
+-->
+<br>
+<h4>Change Password</h4>
+
+  <p><%= f.label "New Password" %>
+  <%= f.password_field :password, :autocomplete => "off"  %>
+	<span class="help-inline">Leave blank if you don't want to change !</span>
+  </p>
+
+  <p><%= f.label "Retype New Password" %>
+  <%= f.password_field :password_confirmation %>
+ <span class="help-inline">Leave blank if you don't want to change !</span>
+ </p>
+
+  <br>
+<h4>Details Of Your Parent</h4>
+
+  <p><%= f.label "Parent email" %>
+  <%= f.text_field :parent_email , :validate => true %><span class="help-inline">This would be your parent's email address</span>
+  <% $current_parent_email = current_user.parent_email %>
+  </p>
+
+  <div><%= f.submit "Update" %></div>
+<% end %>
+<!--
+<h4>Cancel my account</h4>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+-->
+<%= link_to "Home", root_path %>
+</div>
+	<div class="clear"></div>
+
+
+<div class="pg-content-btm"></div>
+
+</div>
+
+
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>

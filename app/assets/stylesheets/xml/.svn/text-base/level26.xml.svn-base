@@ -1,0 +1,253 @@
+<quiz TYPE="Division 1 to 100">
+  <level NAME="level26"/>
+  <Items>
+    <Item>
+      <question>8 / 2</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>12 / 3</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>16 / 4</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>16 / 8</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>20 / 4</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>24 / 4</question>
+      <correct>6</correct>
+    </Item>
+    <Item>
+      <question>24 / 6</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>24 / 12</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>28 / 4</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>32 / 2</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>32 / 8</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>32 / 16</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>36 / 4</question>
+      <correct>9</correct>
+    </Item>
+    <Item>
+      <question>36 / 12</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>40 / 4</question>
+      <correct>10</correct>
+    </Item>
+    <Item>
+      <question>40 / 8</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>40 / 10</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>44 / 4</question>
+      <correct>11</correct>
+    </Item>
+    <Item>
+      <question>48 / 2</question>
+      <correct>24</correct>
+    </Item>
+    <Item>
+      <question>48 / 8</question>
+      <correct>6</correct>
+    </Item>
+    <Item>
+      <question>48 / 12</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>48 / 16</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>48 / 24</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>52 / 2</question>
+      <correct>26</correct>
+    </Item>
+    <Item>
+      <question>56 / 2</question>
+      <correct>28</correct>
+    </Item>
+    <Item>
+      <question>56 / 8</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>56 / 28</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>60 / 2</question>
+      <correct>30</correct>
+    </Item>
+    <Item>
+      <question>60 / 6</question>
+      <correct>10</correct>
+    </Item>
+    <Item>
+      <question>60 / 15</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>64 / 4</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>64 / 8</question>
+      <correct>8</correct>
+    </Item>
+    <Item>
+      <question>64 / 16</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>64 / 32</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>68 / 4</question>
+      <correct>17</correct>
+    </Item>
+    <Item>
+      <question>72 / 3</question>
+      <correct>24</correct>
+    </Item>
+    <Item>
+      <question>72 / 8</question>
+      <correct>9</correct>
+    </Item>
+    <Item>
+      <question>72 / 9</question>
+      <correct>8</correct>
+    </Item>
+    <Item>
+      <question>72 / 18</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>72 / 36</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>76 / 2</question>
+      <correct>38</correct>
+    </Item>
+    <Item>
+      <question>80 / 4</question>
+      <correct>20</correct>
+    </Item>
+    <Item>
+      <question>80 / 5</question>
+      <correct>16</correct>
+    </Item>
+    <Item>
+      <question>80 / 16</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>80 / 20</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>80 / 40</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>84 / 3</question>
+      <correct>28</correct>
+    </Item>
+    <Item>
+      <question>84 / 12</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>84 / 28</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>88 / 2</question>
+      <correct>44</correct>
+    </Item>
+    <Item>
+      <question>88 / 8</question>
+      <correct>11</correct>
+    </Item>
+    <Item>
+      <question>88 / 11</question>
+      <correct>8</correct>
+    </Item>
+    <Item>
+      <question>92 / 4</question>
+      <correct>23</correct>
+    </Item>
+    <Item>
+      <question>96 / 4</question>
+      <correct>24</correct>
+    </Item>
+    <Item>
+      <question>96 / 8</question>
+      <correct>12</correct>
+    </Item>
+    <Item>
+      <question>96 / 12</question>
+      <correct>8</correct>
+    </Item>
+    <Item>
+      <question>96 / 16</question>
+      <correct>6</correct>
+    </Item>
+    <Item>
+      <question>96 / 24</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>96 / 32</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>96 / 48</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>100 / 2</question>
+      <correct>50</correct>
+    </Item>
+    <Item>
+      <question>100 / 5</question>
+      <correct>20</correct>
+    </Item>
+  </Items>
+</quiz>

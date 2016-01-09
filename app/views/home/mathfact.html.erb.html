@@ -1,0 +1,72 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interactive Education - About The Product</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="MATHFACT" />
+
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+	<%= stylesheet_link_tag "application" %>
+   <%#= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+
+	</head>
+    <body>
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+            <div id="page-header">
+            	 <h1 title="Interactive Education">
+		     <%= link_to "Home", root_path %></h1>
+	        <div id="page-header-menu">
+	            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+	            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+	            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+	             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+	            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+	            <a id="page-header-mathfact" href="/product" title="Interactive Education">Interactive Education</a>
+	            <a id="page-header-team" href="/team" title="Team">Team</a>
+            <!--<a id="page-header-logout" href="logout.htm" title="Logout">Logout</a> -->
+	<%if(current_user.to_s != "")%>
+	 <%= link_to('Logout', destroy_user_session_path ,:id => 'page-header-logout',:title => 'Logout', :method => 'delete') %>
+	<%else%>
+	   <%= link_to('Login', new_user_session_path,:id => 'page-header-login',:title => 'Login')  %>
+     <%end%>    
+  </div>
+    </div>
+     <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+            <h1>Overview of Interactive Education</h1>
+<p>
+This software product is an interactive web based platform which aids both teachers and students in enhancing the learning process. This software product is designed to help teachers assign tasks to students easily and analyze their performance on individual basis. Teachers can assign games or interactive assignments to students which have fun elements in them. This encourages students to complete tasks assigned to them while they will learn important educational concepts. Our software product tries to maximize motivation of students and minimize effort of teachers.</p>
+
+<p>
+Our software product being web based is accessible from different devices ranging from PC to Tablets and Mobile Phones. Students are also allowed to work on their their assignments from their home devices. Our software product also has a leader board system for students which encourages them to compete and score higher than their peers. This product also helps the parents view their ward's performance.
+</p>
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>
+</body>
+</html>

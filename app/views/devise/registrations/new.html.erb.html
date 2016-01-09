@@ -1,0 +1,122 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interactive Education</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="MATHFACT" />
+    
+    <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" />
+	<%= stylesheet_link_tag "application" %>
+   <%#= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+
+	</head>
+    <body>
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+            <div id="page-header">
+            	 <h1 title="Interactive Education">
+		     <%= link_to "Home", root_path %></h1>
+	        <div id="page-header-menu">
+	            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+	            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+	            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+	             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+	            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+	            <a id="page-header-mathfact" href="/product" title="Interactive Education">Interactive Education</a>
+	            <a id="page-header-team" href="/team" title="Team">Team</a>
+            <!--<a id="page-header-logout" href="logout.htm" title="Logout">Logout</a> -->
+	 <%= link_to('Login', new_user_session_path ,:id => 'page-header-login',:title => 'Login') %>
+         
+  </div>
+    </div>
+    
+	
+
+
+    <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+		<br><br>
+		<div class="block">
+  <h2>Teacher Sign up</h2>
+			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			  <%= devise_error_messages! %>
+
+			  <div><%= f.label 'Full Name' %>
+			  <%= f.text_field :real_name %>
+			<span class="help-inline">Students would see this as their teacher name</span>
+			</div>
+
+			  <div><%= f.label 'Username' %>
+			  <%= f.text_field :name %>
+			<span class="help-inline">You would need this to login next time</span>
+			</div>
+
+
+			  <div><%= f.label 'School Name' %>
+			  <%= f.text_field :school_name %>
+			<span class="help-inline">Students would see this as their school name</span>
+			</div>
+
+			  <div><%= f.label 'Grade' %>
+			  <%= f.select :class_name ,[5,6,7,8]%>
+			  
+			</div>
+
+			  <div><%= f.label 'Number of Students' %>	
+			   <%= f.select :no_of_student ,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99]%>
+			<span class="help-inline">The Number of logins required (Number of students who would use the product).</span>
+			<b class="help-inline">Student range 0-99</b>
+			</div>
+
+			  <div><%= f.label "Email" %>
+			  <%= f.text_field :email %>
+			<span class="help-inline">The system generated username/password would be sent to this address</span>
+			</div>
+
+			<div>
+			  <%= f.hidden_field :parent_email, :value => "doesnotapply@doesnotapply.com" %>
+			</div>
+
+			  <div><%= f.label :password %>
+			  <%= f.password_field :password %></div>
+
+			  <div><%= f.label :password_confirmation %>
+			  <%= f.password_field :password_confirmation %></div>
+
+
+
+			  <div><%= f.submit "Sign up" ,:class => "btn btn-inverse" %></div>
+			<% end %>
+
+        </div>
+		<div class="clear"></div>
+
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>
+</body>
+</html>

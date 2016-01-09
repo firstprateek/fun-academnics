@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<assignment>
+
+  <AsgnData>
+
+    <AsgnName>Assignment</AsgnName>
+
+    <AsgnNum>1</AsgnNum>
+
+  </AsgnData>
+  
+  <question>
+
+    <question>2+2</question>
+
+    <answer>4</answer>
+
+    <type>Text</type>
+
+  </question>
+
+</assignment>

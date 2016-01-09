@@ -1,0 +1,104 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interactive Education - About Team</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="MATHFACT" />
+
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+	<%= stylesheet_link_tag "application" %>
+   <%#= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+
+	</head>
+    <body>
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+            <div id="page-header">
+            	 <h1 title="IEP .">
+		     <%= link_to "Home", root_path %></h1>
+	        <div id="page-header-menu">
+	            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+	            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+	            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+	             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+	            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+	            <a id="page-header-mathfact" href="/product" title="Interactive Education">Interactive Education</a>
+	            <a id="page-header-team" href="/team" title="Team">Team</a>
+            <!--<a id="page-header-logout" href="logout.htm" title="Logout">Logout</a> -->
+	 		<%if(current_user.to_s != "")%>
+			 <%= link_to('Logout', destroy_user_session_path ,:id => 'page-header-logout',:title => 'Logout', :method => 'delete') %>
+			<%else%>
+			   <%= link_to('Login', new_user_session_path,:id => 'page-header-login',:title => 'Login')  %>
+		     <%end%>
+  </div>
+    </div>
+     <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+<br>
+<h2> This product is made as part of Software Engineering course by : </h2>
+<ul>
+	<li>
+		Sharan Shodhan
+	</li>
+	<li>
+		Nirmal Patel
+	</li>
+	<li>
+		Prateek Joshi
+	</li>
+	<li>
+		Neha Gupta
+	</li>
+	<li>
+		Harsh Sharma
+	</li>
+	<li>
+		Shreya Shah
+	</li>
+	<li>
+		Piyush Kapoor
+	</li>
+	<li>
+		Vivek Kumar
+	</li>
+	<li>
+		Bhargav Pandya
+	</li>
+	<li>
+		Vishal Tyagi
+	</li>
+</ul>
+<br>
+<br>
+<h4>In case of any querries, feel free to contact us on</h4>
+	<p>sharanshodhan@gmail.com</p>
+	<p>message.nirmal@gmail.com</p>
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>
+</body>
+</html>

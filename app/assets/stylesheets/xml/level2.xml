@@ -1,0 +1,225 @@
+<quiz TYPE="Subtraction 1 to 10">
+  <level NAME="level2"/>
+  <Items>
+    <Item>
+      <question>1 - 1</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>2 - 1</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>2 - 2</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>3 - 1</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>3 - 2</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>3 - 3</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>4 - 1</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>4 - 2</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>4 - 3</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>4 - 4</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>5 - 1</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>5 - 2</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>5 - 3</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>5 - 4</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>5 - 5</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>6 - 1</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>6 - 2</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>6 - 3</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>6 - 4</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>6 - 5</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>6 - 6</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>7 - 1</question>
+      <correct>6</correct>
+    </Item>
+    <Item>
+      <question>7 - 2</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>7 - 3</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>7 - 4</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>7 - 5</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>7 - 6</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>7 - 7</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>8 - 1</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>8 - 2</question>
+      <correct>6</correct>
+    </Item>
+    <Item>
+      <question>8 - 3</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>8 - 4</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>8 - 5</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>8 - 6</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>8 - 7</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>8 - 8</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>9 - 1</question>
+      <correct>8</correct>
+    </Item>
+    <Item>
+      <question>9 - 2</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>9 - 3</question>
+      <correct>6</correct>
+    </Item>
+    <Item>
+      <question>9 - 4</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>9 - 5</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>9 - 6</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>9 - 7</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>9 - 8</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>9 - 9</question>
+      <correct>0</correct>
+    </Item>
+    <Item>
+      <question>10 - 1</question>
+      <correct>9</correct>
+    </Item>
+    <Item>
+      <question>10 - 2</question>
+      <correct>8</correct>
+    </Item>
+    <Item>
+      <question>10 - 3</question>
+      <correct>7</correct>
+    </Item>
+    <Item>
+      <question>10 - 4</question>
+      <correct>6</correct>
+    </Item>
+    <Item>
+      <question>10 - 5</question>
+      <correct>5</correct>
+    </Item>
+    <Item>
+      <question>10 - 6</question>
+      <correct>4</correct>
+    </Item>
+    <Item>
+      <question>10 - 7</question>
+      <correct>3</correct>
+    </Item>
+    <Item>
+      <question>10 - 8</question>
+      <correct>2</correct>
+    </Item>
+    <Item>
+      <question>10 - 9</question>
+      <correct>1</correct>
+    </Item>
+    <Item>
+      <question>10 - 10</question>
+      <correct>0</correct>
+    </Item>
+  </Items>
+</quiz>

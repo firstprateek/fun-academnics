@@ -1,0 +1,20 @@
+<% @latest_progress_details.each do |key,game_details| %>
+<h1><%= key %>
+<table>
+	<tr>
+		<td>Name</td>
+		<td>Level Name</td>
+		<td>Score</td>
+		<td>Accuracy</td>
+	</tr>
+	<% game_details.each do |detail| %>
+		<tr>
+			<td><%= detail.split(',')[0] %></td>
+			<td><%= detail.split(',')[1] %></td>
+			<td><%= detail.split(',')[2] %></td>
+			<td><%= detail.split(',')[3] %></td>
+		</tr>
+	<% end %>
+
+</table>
+<% end %>

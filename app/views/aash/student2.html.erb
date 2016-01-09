@@ -1,0 +1,188 @@
+
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<html itemscope itemtype="http://schema.org/Article"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interactive Education</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="MATHFACT" />
+    <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" />
+	<%= stylesheet_link_tag "application" %>
+   <%= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+
+	<script>
+				$(document).ready(function(){
+
+					$(document).bind('cbox_closed',function(){
+						location.reload(true);
+					});
+					
+					//Examples of how to assign the ColorBox event to elements
+					$(".ajax").colorbox();
+					$(".youtube").colorbox({iframe:true, innerWidth:425, innerHeight:344});
+					$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+					$(".inline").colorbox({inline:true, width:"50%"});
+					//Example of preserving a JavaScript event for inline calls.
+				
+					$("#click").click(function(){ 
+										$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+										return false;
+									});
+				});
+	</script>
+	</head>
+    <body>
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+            <div id="page-header">
+            	 <h1 title="MathFact 2012.">
+		     <%= link_to "Home", root_path %></h1>
+	        <div id="page-header-menu">
+	            <!--<a id="page-header-publishers" href="publishers.htm" title="Publishers">Publishers</a>            
+	            <a id="page-header-advertisers" href="advertisers.htm" title="Advertisers">Advertisers</a>
+	            <a id="page-header-about" href="about.htm" title="About Us">About Us</a>-->
+	             <%= link_to "Home", root_path, :id => 'page-header-home' %>
+	            <!-- <a id="page-header-home" href="default.htm" title="Home">Home</a> -->
+	            <a id="page-header-mathfact" href="/product" title="Interactive Education">Interactive Education</a>
+	            <a id="page-header-team" href="/team" title="Team">Team</a>
+            <!--<a id="page-header-logout" href="logout.htm" title="Logout">Logout</a> -->
+	 <%= link_to('Logout', destroy_user_session_path ,:id => 'page-header-logout',:title => 'Logout', :method => 'delete') %>
+         
+  </div>
+    </div>
+    
+    <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+		<br><br>
+		
+		<%#	binding.pry %>
+<% if (current_user.real_name.to_s == "" ) %>	
+		
+		<h3>Welcome <em><%=current_user.name%> 	</em>!</h3>
+		<h4>School: <%=current_user.school_name%></h4>
+        <h4>Grade: <%=current_user.class_name%></h4>
+		<br>
+		<h4 >
+   To start playing the game, please fill your Real Name here <%= link_to("Edit Account Settings Page",edit_user_registration_path,:method => 'get')%>
+		</h4>
+	
+		<!-- <h4>
+	<font color="red">Warning</font> : You can only play the game once you fill your name in the 
+	<%= link_to("Edit Account Settings Page",edit_user_registration_path,:method => 'get')%>
+	</h4> -->
+	
+	
+<% else %>
+			<div class="block-left">
+   			<h3>Welcome <em><%=current_user.real_name%> 	</em>!</h3><br>
+
+            <h4>School: <%=current_user.school_name%></h4><br>
+            <h4>Grade: <%=current_user.class_name%></h4>
+	<%= link_to("Edit Account Settings",edit_user_registration_path,:method => 'get')%> 
+<br><br>
+			<!---<a href="/showgame" title ="Interactive Education" class = "ajax">
+			<img src="assets/site/mathfact_screen.png"><br>
+            </a> -->
+
+		<% @ongoing_tasks.each do |task_details| %>
+				<% if (task_details.game_id == "asgn") %>
+				<div class = "block-left">
+					<a class="ajax" href=<%= "/showgame?game_id=" + task_details.game_id %>><img id="assignment" src="assets/site/assignment.png"></a>
+				</div>
+				<div class = "block-left">
+					<p><a class="btn_custom ajax" href=<%= "/showgame?game_id=" + task_details.game_id %>>Solve <%= task_details.game_name %>!</a></p>
+				</div><br>
+				<% elsif (task_details.game_id == "gm" )%>
+				<div class = "block-left">
+					<a class="ajax" href=<%= "/showgame?game_id=" + task_details.game_id %>><img id="game" src="assets/site/game.png"></a>		
+				</div>
+				<div class = "block-left">
+					<p><a class="btn_custom ajax" href=<%= "/showgame?game_id=" + task_details.game_id %>>Play <%= task_details.game_name %>!</a></p>
+				</div>
+				
+				<% end %>
+		<% end %>
+
+		<br />
+		<a href="/student/view_progress">View your progress history</a>
+        </div>
+        
+        <div class="block-right">
+
+        	<img id="wall-of-fame" src="assets/site/cup.png">
+			
+			<%   
+			#leaderboard processing
+@data = User.where(:teacher_id => current_user.teacher_id ).sort { |b,a| a.points.to_i <=> b.points.to_i}.first(10)
+
+#@data.each do |student| 
+#if (student.real_name == "")
+#	@noname.push(student)
+#end
+
+#@havenoname = @data.find(:realname => "")
+
+#@havename = @data - @havenoname
+
+			
+	%>
+			
+              <table class="dataTable" style="width: 400px; margin-top: 139px">
+            	<thead>
+                	<tr>
+                    	<td>Name </td>
+                        <td>Score </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                		<% @data.each do |student|  %>
+						<%if (student.real_name.to_s != "")%>
+						<tr>
+							<td><%= student.real_name.to_s %> </td>
+							<td><%= student.points.to_s  %></td> 
+						
+						</tr>
+						
+						<% end %>
+						<% end %>
+						
+                    <tr class="lastrow">
+                    	<td>Your score</td>
+                        <td><%=current_user.points %> </td>
+                    </tr>
+                </tbody>
+            </table>
+</div>
+<%end%>      
+	
+		<div class="clear"></div>
+
+	</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+Thank you <%=@user.name%> for registering
+===============================================
+ 
+You have successfully signed up to Interactive Education
+
+your username is: <%=@user.name%>
+
+Students username and passwords :
+
+<%
+ @data =  User.where(:teacher_id => @user.name );
+ $i = 1 
+ @data.each do |student|  %>
+<%= $i.to_s + ". " + student.name.to_s + "   " + student.unenc_pass.to_s  %>
+<% 
+ $i+=1	
+ end 
+%>
+
+Thanks for joining and have a great day!

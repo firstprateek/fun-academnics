@@ -1,0 +1,485 @@
+<html>
+
+<head>
+<script type="text/javascript">
+function XMLWriter( encoding, version ){
+	if( encoding )
+		this.encoding = encoding;
+	if( version )
+		this.version = version;
+};
+(function(){
+	
+XMLWriter.prototype = {
+	encoding:'ISO-8859-1',// what is the encoding
+	version:'1.0', //what xml version to use
+	formatting: 'indented', //how to format the output (indented/none)  ?
+	indentChar:'\t', //char to use for indent
+	indentation: 1, //how many indentChar to add per level
+	newLine: '\n', //character to separate nodes when formatting
+	//start a new document, cleanup if we are reusing
+	writeStartDocument:function( standalone ){
+		this.close();//cleanup
+		this.stack = [ ];
+		this.standalone = standalone;
+	},
+	//get back to the root
+	writeEndDocument:function(){
+		this.active = this.root;
+		this.stack = [ ];
+	},
+	//set the text of the doctype
+	writeDocType:function( dt ){
+		this.doctype = dt;
+	},
+	//start a new node with this name, and an optional namespace
+	writeStartElement:function( name, ns ){
+		if( ns )//namespace
+			name = ns + ':' + name;
+		
+		var node = { n:name, a:{ }, c: [ ] };//(n)ame, (a)ttributes, (c)hildren
+		
+		if( this.active ){
+			this.active.c.push(node);
+			this.stack.push(this.active);
+		}else
+			this.root = node;
+		this.active = node;
+	},
+	//go up one node, if we are in the root, ignore it
+	writeEndElement:function(){
+		this.active = this.stack.pop() || this.root;
+	},
+	//add an attribute to the active node
+	writeAttributeString:function( name, value ){
+		if( this.active )
+			this.active.a[name] = value;
+	},
+	//add a text node to the active node
+	writeString:function( text ){
+		if( this.active )
+			this.active.c.push(text);
+	},
+	//shortcut, open an element, write the text and close
+	writeElementString:function( name, text, ns ){
+		this.writeStartElement( name, ns );
+		this.writeString( text );
+		this.writeEndElement();
+	},
+	//add a text node wrapped with CDATA
+	writeCDATA:function( text ){
+		this.writeString( '<![CDATA[' + text + ']]>' );
+	},
+	//add a text node wrapped in a comment
+	writeComment:function( text ){
+		this.writeString('<!-- ' + text + ' -->');
+	},
+	//generate the xml string, you can skip closing the last nodes
+	flush:function(){		
+		if( this.stack && this.stack[0] )//ensure it's closed
+			this.writeEndDocument();
+		
+		var 
+			chr = '', indent = '', num = this.indentation,
+			formatting = this.formatting.toLowerCase() == 'indented',
+			buffer = '<&#63;xml version="'+this.version+'" encoding="'+this.encoding+'"';
+			
+			/*
+			*	modded by Phong Thai @ JavaScriptBank.com
+			*/
+			buffer = buffer.replace( '&#63;', '?' );
+			
+		if( this.standalone !== undefined )
+			buffer += ' standalone="'+!!this.standalone+'"';
+		buffer += ' ?>';
+		
+		buffer = [buffer];
+		
+		if( this.doctype && this.root )
+			buffer.push('<!DOCTYPE '+ this.root.n + ' ' + this.doctype+'>'); 
+		
+		if( formatting ){
+			while( num-- )
+				chr += this.indentChar;
+		}
+		
+		if( this.root )//skip if no element was added
+			format( this.root, indent, chr, buffer );
+		
+		return buffer.join( formatting ? this.newLine : '' );
+	},
+	//cleanup, don't use again without calling startDocument
+	close:function(){
+		if( this.root )
+			clean( this.root );
+		this.active = this.root = this.stack = null;
+	},
+	getDocument: window.ActiveXObject 
+		? function(){ //MSIE
+			var doc = new ActiveXObject('Microsoft.XMLDOM');
+			doc.async = false;
+			doc.loadXML(this.flush());
+			return doc;
+		}
+		: function(){// Mozilla, Firefox, Opera, etc.
+			return (new DOMParser()).parseFromString(this.flush(),'text/xml');
+	}
+};
+
+//utility, you don't need it
+function clean( node ){
+	var l = node.c.length;
+	while( l-- ){
+		if( typeof node.c[l] == 'object' )
+			clean( node.c[l] );
+	}
+	node.n = node.a = node.c = null;	
+};
+
+//utility, you don't need it
+function format( node, indent, chr, buffer ){
+	var 
+		xml = indent + '<' + node.n,
+		nc = node.c.length,
+		attr, child, i = 0;
+		
+	for( attr in node.a )
+		xml += ' ' + attr + '="' + node.a[attr] + '"';
+	
+	xml += nc ? '>' : ' />';
+
+	buffer.push( xml );
+		
+	if( nc ){
+		do{
+			child = node.c[i++];
+			if( typeof child == 'string' ){
+				if( nc == 1 )//single text node
+					return buffer.push( buffer.pop() + child + '</'+node.n+'>' );					
+				else //regular text node
+					buffer.push( indent+chr+child );
+			}else if( typeof child == 'object' ) //element node
+				format(child, indent+chr, chr, buffer);
+		}while( i < nc );
+		buffer.push( indent + '</'+node.n+'>' );
+	}
+	
+};
+})();
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<title>Interactive Education</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="author" content="mathfact" />
+    <meta name="language" content="en-us" />
+    <meta name="rating" content="general" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+    <meta name="GoogleBot" content="index,follow" />
+    <meta name="robots" content="index,follow" />
+    <meta name="title" content="MATHFACT" />
+
+    <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico"/>   
+
+	<%= stylesheet_link_tag "application" %>
+   <%#= javascript_include_tag "application" %>
+    <!--<script type="text/javascript" src="/assets/lib/jquery/tooltip.js"></script> -->
+	<%# include_javascript 'tooltip.js.coffee' %>
+
+	</head>
+    <body>
+<a id="top" name="top"></a>
+<div id="lightbox" style="display:none;"></div>
+<div id="mainpage">
+
+     <div id="page-submenu">
+             
+    </div>
+<div id="page-inner">
+
+		<div class="pg-content-main">
+
+	<div id = "parsed-xml">
+	
+	<FORM name = "assignmentForm" id = "assignmentForm" onSubmit="return writeXML();">
+    <P>
+
+	<LABEL for="AsgnName">Assignment name: </LABEL>
+              <INPUT type="text" id="AsgnName" name = "AsgnName"><BR>
+    <LABEL for="AsgnNum">Assignment number: </LABEL>
+              <INPUT type="text" id="AsgnNum" name = "AsgnNum"><BR>
+
+     <br><br><br>
+
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question0"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer0"><BR>
+    <LABEL for="Type">Type: </LABEL>
+             <select name="type0">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+	<br>
+    <br>
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question1"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer1"><BR>
+    <LABEL for="Type">Type: </LABEL>
+              <select name="type1">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question2"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer2"><BR>
+    <LABEL for="Type">Type: </LABEL>
+               <select name="type2">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question3"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer3"><BR>
+    <LABEL for="Type">Type: </LABEL>
+              <select name="type3">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question4"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer4"><BR>
+    <LABEL for="Type">Type: </LABEL>
+               <select name="type4">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question5"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer5"><BR>
+    <LABEL for="Type">Type: </LABEL>
+              <select name="type5">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question6"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer6"><BR>
+    <LABEL for="Type">Type: </LABEL>
+               <select name="type6">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question7"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer7"><BR>
+    <LABEL for="Type">Type: </LABEL>
+               <select name="type7">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+    <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question8"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer8"><BR>
+    <LABEL for="Type">Type: </LABEL>
+               <select name="type8">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+     <LABEL for="Question">Question: </LABEL>
+              <INPUT type="text" id="question" name = "question9"><BR>
+    <LABEL for="Answer">Answer: </LABEL>
+              <INPUT type="text" id="answer" name = "answer9"><BR>
+    <LABEL for="Type">Type: </LABEL>
+               <select name="type9">
+				<option>Text</option>
+				<option>MCQ</option>
+			</select>
+    <br>
+    <br>
+    <INPUT type="submit" value="Send"> <INPUT type="reset">
+    </P>
+ </FORM>
+
+</div>
+
+<div >
+	<%= form_tag("assign_task", :method => "get", :id => "xmlForm") do %>
+   <!-- <form id="xmlForm" target= "assign_task" method = "get"> -->
+   	<input type="hidden" name="teacher_id" id = "teacher_id" value=<%= @teacher_id %>></input><br>
+   	<input type="hidden" name="game_id" id = "game_id" value=<%= @game_id %>></input><br>
+	<input type="hidden" name="xmlfield" id = "xmlfield"><br>
+	<% end %>
+</div>
+
+</div>
+	<div class="pg-content-btm"></div>
+	
+</div>
+
+
+<div id="optout">
+<p>&copy; All Rights Reserved.</p>
+</div>
+
+
+<script type="text/javascript">
+
+
+function formSubmit()
+{
+	document.getElementById("xmlForm").submit();
+};
+
+function writeXML(){
+
+
+
+var xw = new XMLWriter('UTF-8');
+xw.formatting = 'indented';//add indentation and newlines
+xw.indentChar = ' ';//indent with spaces
+xw.indentation = 2;//add 2 spaces per level
+
+xw.writeStartDocument( );
+xw.writeStartElement( 'assignment' );
+	
+
+	xw.writeStartElement('AsgnData');
+		xw.writeElementString('AsgnName', document.assignmentForm.AsgnName.value);
+		xw.writeElementString('AsgnNum', document.assignmentForm.AsgnNum.value);
+	xw.writeEndElement();
+
+	if(document.assignmentForm.question0.value != "")
+	{
+	xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question0.value);
+		xw.writeElementString('answer', document.assignmentForm.answer0.value);
+		xw.writeElementString('type', document.assignmentForm.type0.value);
+	xw.writeEndElement();
+	}
+	if(document.assignmentForm.question1.value != "")
+	{
+	xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question1.value);
+		xw.writeElementString('answer', document.assignmentForm.answer1.value);
+		xw.writeElementString('type', document.assignmentForm.type1.value);
+	xw.writeEndElement();
+	}
+	if(document.assignmentForm.question2.value != "")
+	{
+	xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question2.value);
+		xw.writeElementString('answer', document.assignmentForm.answer2.value);
+		xw.writeElementString('type', document.assignmentForm.type2.value);
+	xw.writeEndElement();
+	}
+	if(document.assignmentForm.question3.value != "")
+	{
+		xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question3.value);
+		xw.writeElementString('answer', document.assignmentForm.answer3.value);
+		xw.writeElementString('type', document.assignmentForm.type3.value);
+	xw.writeEndElement();
+	}
+	if(document.assignmentForm.question4.value != "")
+	{
+		xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question4.value);
+		xw.writeElementString('answer', document.assignmentForm.answer4.value);
+		xw.writeElementString('type', document.assignmentForm.type4.value);
+		xw.writeEndElement();
+	}
+	if(document.assignmentForm.question5.value != "")
+	{
+	xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question5.value);
+		xw.writeElementString('answer', document.assignmentForm.answer5.value);
+		xw.writeElementString('type', document.assignmentForm.type5.value);
+	xw.writeEndElement();
+	}
+	if(document.assignmentForm.question6.value != "")
+	{
+	xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question6.value);
+		xw.writeElementString('answer', document.assignmentForm.answer6.value);
+		xw.writeElementString('type', document.assignmentForm.type6.value);
+	xw.writeEndElement();
+	}
+	if(document.assignmentForm.question7.value != "")
+	{
+	xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question7.value);
+		xw.writeElementString('answer', document.assignmentForm.answer7.value);
+		xw.writeElementString('type', document.assignmentForm.type7.value);
+	xw.writeEndElement();
+	}
+	if(document.assignmentForm.question8.value != "")
+	{
+	xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question8.value);
+		xw.writeElementString('answer', document.assignmentForm.answer8.value);
+		xw.writeElementString('type', document.assignmentForm.type8.value);
+	xw.writeEndElement();
+	}
+	if(document.assignmentForm.question9.value != "")
+	{
+	xw.writeStartElement('question');
+		xw.writeElementString('question', document.assignmentForm.question9.value);
+		xw.writeElementString('answer', document.assignmentForm.answer9.value);
+		xw.writeElementString('type', document.assignmentForm.type9.value);
+	xw.writeEndElement();
+	}
+xw.writeEndElement();
+xw.writeEndDocument();
+
+
+var xml = xw.flush(); //generate the xml string
+xw.close();//clean the writer
+xw = undefined;//don't let visitors use it, it's closed
+//set the xml
+
+document.getElementById('parsed-xml').value = xml;
+document.getElementById('xmlfield').value = xml;
+alert(document.getElementById('xmlfield').value)
+
+document.getElementById("xmlForm").submit();
+
+return false;
+};
+</script>
+
+</body>
+
+</html>
